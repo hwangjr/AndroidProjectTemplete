@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivityFragment">
+
+    <co.sihe.hongmi.views.tab.FragmentPagerTabGroup
+        android:id="@+id/tabgroup_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@android:id/tabs"
+            layout="@layout/main_tab_indicator" />
+    </co.sihe.hongmi.views.tab.FragmentPagerTabGroup>
+</LinearLayout>

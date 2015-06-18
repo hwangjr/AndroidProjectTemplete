@@ -1,0 +1,102 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        sihe {
+            keyAlias 'hongmilottery'
+            keyPassword 'sihe.co.qwer1234'
+            storeFile file('/home/hwangjr/Develop/keystore/sihe.sihe.co.qwer1234.jks')
+            storePassword 'sihe.co.qwer1234'
+        }
+    }
+
+    compileSdkVersion 22
+    buildToolsVersion "23.0.0 rc2"
+
+    defaultConfig {
+        applicationId "co.sihe.hongmi"
+        minSdkVersion 10
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+
+        // dex突破65535的限制
+        multiDexEnabled true
+        // 默认渠道
+        manifestPlaceholders = [TD_CHANNEL_VALUE: "official"]
+    }
+    buildTypes {
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "DEBUG_LOG", "true"
+            buildConfigField "boolean", "DEBUG_CANARY", "true"
+
+            versionNameSuffix "-debug"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+        }
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "boolean", "DEBUG_CANARY", "true"
+
+            minifyEnabled true
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.sihe
+        }
+    }
+    productFlavors {
+        qq {
+            manifestPlaceholders = [TD_CHANNEL_VALUE: "qq"]
+        }
+        baidu {
+            manifestPlaceholders = [TD_CHANNEL_VALUE: "baidu"]
+        }
+        baidu91 {
+            manifestPlaceholders = [TD_CHANNEL_VALUE: "baidu91"]
+        }
+        androidmarket {
+            manifestPlaceholders = [TD_CHANNEL_VALUE: "androidmarket"]
+        }
+        qihu360 {
+            manifestPlaceholders = [TD_CHANNEL_VALUE: "qihu360"]
+        }
+        wandoujia {
+            manifestPlaceholders = [TD_CHANNEL_VALUE: "wandoujia"]
+        }
+        taobao {
+            manifestPlaceholders = [TD_CHANNEL_VALUE: "taobao"]
+        }
+        meizu {
+            manifestPlaceholders = [TD_CHANNEL_VALUE: "meizu"]
+        }
+        huawei {
+            manifestPlaceholders = [TD_CHANNEL_VALUE: "huawei"]
+        }
+        xiaomi {
+            manifestPlaceholders = [TD_CHANNEL_VALUE: "xiaomi"]
+        }
+    }
+    //lintOptions {
+    //    abortOnError false
+    //}
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.4.0'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'com.squareup.okio:okio:1.4.0'
+    compile 'com.github.orangegangsters:swipy:1.2.0@aar'
+    compile 'jp.wasabeef:recyclerview-animators:1.2.0@aar'
+    compile 'com.android.support:support-v4:22.2.0'
+    compile 'com.github.bumptech.glide:glide:3.6.0'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
+}
