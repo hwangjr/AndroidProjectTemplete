@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Created by hwangjr on 6/19/15.
  */
-public class BaseResponse {
+public class BaseResponse<K> {
     @Expose
     @SerializedName("code")
     public String code;
@@ -15,5 +15,5 @@ public class BaseResponse {
     public String session;
     @Expose
     @SerializedName("data")
-    public String data;
+    public K data;
 }
