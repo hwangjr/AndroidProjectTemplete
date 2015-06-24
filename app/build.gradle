@@ -27,6 +27,11 @@ android {
         // 默认渠道
         manifestPlaceholders = [TD_CHANNEL_VALUE: "official"]
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
     buildTypes {
         debug {
             // 显示Log
