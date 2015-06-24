@@ -1,4 +1,4 @@
-package co.sihe.hongmi;
+package co.sihe.apptemplete;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

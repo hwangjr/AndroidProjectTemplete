@@ -5,7 +5,7 @@
     android:orientation="vertical"
     tools:context=".MainActivityFragment">
 
-    <co.sihe.hongmi.views.tab.FragmentPagerTabGroup
+    <co.sihe.apptemplete.views.tab.FragmentPagerTabGroup
         android:id="@+id/tabgroup_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -13,5 +13,5 @@
         <include
             android:id="@android:id/tabs"
             layout="@layout/main_tab_indicator" />
-    </co.sihe.hongmi.views.tab.FragmentPagerTabGroup>
+    </co.sihe.apptemplete.views.tab.FragmentPagerTabGroup>
 </LinearLayout>

@@ -1,7 +1,8 @@
-package co.sihe.hongmi.fragment;
+package co.sihe.apptemplete.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import co.sihe.hongmi.R;
-import co.sihe.hongmi.fragment.dummy.DummyContent;
+import co.sihe.apptemplete.R;
+import co.sihe.apptemplete.fragment.dummy.DummyContent;
 
 /**
  * A fragment representing a list of Items.
@@ -117,6 +118,9 @@ public class FocusFragment extends BaseFragment implements AbsListView.OnItemCli
             // fragment is attached to one) that an item has been selected.
             mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
         }
+
+        // FIXME test api
+        Log.e("FocusFragment", "onItemClick()");
     }
 
     /**

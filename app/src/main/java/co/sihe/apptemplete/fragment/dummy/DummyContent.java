@@ -1,4 +1,4 @@
-package co.sihe.hongmi.fragment.dummy;
+package co.sihe.apptemplete.fragment.dummy;
 
 import java.util.ArrayList;
 import java.util.HashMap;

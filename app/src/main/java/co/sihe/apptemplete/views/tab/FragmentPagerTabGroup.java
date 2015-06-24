@@ -1,4 +1,4 @@
-package co.sihe.hongmi.views.tab;
+package co.sihe.apptemplete.views.tab;
 
 import android.content.Context;
 import android.graphics.Rect;

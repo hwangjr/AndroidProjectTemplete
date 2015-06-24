@@ -1,13 +1,13 @@
-package co.sihe.hongmi.fragment;
+package co.sihe.apptemplete.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import co.sihe.hongmi.R;
-import co.sihe.hongmi.views.tab.BaseTabGroup;
-import co.sihe.hongmi.views.tab.FragmentPagerTabGroup;
+import co.sihe.apptemplete.R;
+import co.sihe.apptemplete.views.tab.BaseTabGroup;
+import co.sihe.apptemplete.views.tab.FragmentPagerTabGroup;
 
 
 /**

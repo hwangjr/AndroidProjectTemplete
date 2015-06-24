@@ -1,4 +1,4 @@
-package co.sihe.hongmi.fragment;
+package co.sihe.apptemplete.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -16,9 +16,9 @@ import com.squareup.leakcanary.RefWatcher;
 
 import java.io.Serializable;
 
-import co.sihe.hongmi.HMApplication;
-import co.sihe.hongmi.R;
-import co.sihe.hongmi.views.tab.LoadingPage;
+import co.sihe.apptemplete.HMApplication;
+import co.sihe.apptemplete.R;
+import co.sihe.apptemplete.views.tab.LoadingPage;
 
 public class BaseFragment extends Fragment {
     protected static final int REQUEST_SIZE = 20;

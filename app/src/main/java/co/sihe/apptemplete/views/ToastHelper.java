@@ -1,4 +1,4 @@
-package co.sihe.hongmi.views;
+package co.sihe.apptemplete.views;
 
 import android.app.Activity;
 import android.content.Context;

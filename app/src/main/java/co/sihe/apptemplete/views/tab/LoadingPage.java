@@ -1,4 +1,4 @@
-package co.sihe.hongmi.views.tab;
+package co.sihe.apptemplete.views.tab;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import co.sihe.hongmi.R;
+import co.sihe.apptemplete.R;
 
 public class LoadingPage extends FrameLayout {
 

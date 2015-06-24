@@ -1,4 +1,4 @@
-package co.sihe.hongmi;
+package co.sihe.apptemplete;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
