@@ -13,7 +13,13 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import co.sihe.apptemplete.R;
+import co.sihe.apptemplete.api.entity.BaseResponse;
+import co.sihe.apptemplete.api.service.UserAPI;
+import co.sihe.apptemplete.api.service.UserService;
 import co.sihe.apptemplete.fragment.dummy.DummyContent;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 /**
  * A fragment representing a list of Items.
@@ -121,6 +127,17 @@ public class FocusFragment extends BaseFragment implements AbsListView.OnItemCli
 
         // FIXME test api
         Log.e("FocusFragment", "onItemClick()");
+        UserService.login("13888888888", "passwd", new Callback<BaseResponse>() {
+            @Override
+            public void success(BaseResponse baseResponse, Response response) {
+                Log.e("FocusFragment", "success()");
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Log.e("FocusFragment", "failure()");
+            }
+        });
     }
 
     /**
