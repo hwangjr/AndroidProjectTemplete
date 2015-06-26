@@ -34,7 +34,7 @@ public class MainActivityFragment extends BaseFragment {
         Bundle args = new Bundle();
         args.putString(TARGET_TAG_KEY, getTag());
         mFragmentPagerTabGroup.addTab(FocusFragment.class, args);
-        mFragmentPagerTabGroup.addTab(FocusFragment.class, args);
+        mFragmentPagerTabGroup.addTab(EndlessRecyclerFragment.class, args);
         mFragmentPagerTabGroup.addTab(FocusFragment.class, args);
         mFragmentPagerTabGroup.addTab(FocusFragment.class, args);
         mFragmentPagerTabGroup.setCurrentTab(0);
