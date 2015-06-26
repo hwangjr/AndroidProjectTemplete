@@ -129,8 +129,7 @@ public class EndlessRecyclerFragment extends BaseFragment {
             int count = mAdapter.getItemCount();
             mAdapter.addMoreItems(data);
             //通知刷新完毕
-            mSwipeRefreshLayout.setRefreshing(false);
-            mRecyclerView.scrollToPosition(count);
+            mRecyclerView.scrollToPosition(count - 1);
         }
     }
 
