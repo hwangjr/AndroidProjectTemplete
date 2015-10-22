@@ -24,12 +24,10 @@ public class BaseFragment extends Fragment {
     protected static final int REQUEST_SIZE = 20;
 
     protected static final int FIRST = 1;
-
     protected static final int REFRESH = 2;
-
     protected static final int MORE = 3;
-    public static final String TARGET_TAG_KEY = "com.sihe.fragmentname.key";
 
+    public static final String TARGET_TAG_KEY = "com.sihe.fragmentname.key";
     public static final String FRAGMENT_STACKNAME = "com.sihe.fragment.stackName";
 
     private String mLastStackName;
@@ -153,6 +151,8 @@ public class BaseFragment extends Fragment {
             FragmentTransaction transaction = activity
                     .getSupportFragmentManager().beginTransaction();
             fragment.setArguments(args);
+            transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_right,
+                    R.anim.slide_in_right, R.anim.slide_out_right);
             transaction.add(layoutId, fragment, tag);
             transaction.addToBackStack(stackName);
             transaction.commitAllowingStateLoss();

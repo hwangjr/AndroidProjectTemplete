@@ -11,33 +11,37 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import co.sihe.apptemplete.R;
+
 public class ToastHelper {
     private FrameLayout mFrameLayout;
-    private TextView view;
+    private TextView mTextView;
 
     private long mDelay = 3000;
 
     public ToastHelper(Activity activity) {
-        super();
-        mFrameLayout = new FrameLayout(activity);
-        activity.addContentView(mFrameLayout, new LayoutParams(
-                LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-        mFrameLayout.setClickable(false);
-        mFrameLayout.addView(createView(activity));
-        mFrameLayout.setVisibility(View.GONE);
+        if (activity != null) {
+            mFrameLayout = new FrameLayout(activity);
+            activity.addContentView(mFrameLayout, new LayoutParams(
+                    LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+            mFrameLayout.setClickable(false);
+            mFrameLayout.addView(createView(activity));
+            mFrameLayout.setVisibility(View.GONE);
+        }
     }
 
     private View createView(Context context) {
-        view = new TextView(context);
-        view.setTextColor(Color.WHITE);
-        view.setPadding(100, 12, 100, 12);
-        view.setBackgroundColor(Color.parseColor("#333333"));
+        mTextView = new TextView(context);
+        mTextView.setTextColor(Color.WHITE);
+        mTextView.setPadding(100, 12, 100, 12);
+        mTextView.setBackgroundResource(R.drawable.toast_helper_bg);
         FrameLayout.LayoutParams layout = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
-        layout.gravity = Gravity.BOTTOM;
-        view.setLayoutParams(layout);
-        return view;
+        layout.gravity = Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
+        layout.bottomMargin = 50;
+        mTextView.setLayoutParams(layout);
+        return mTextView;
     }
 
     private Handler mHandler = new Handler() {
@@ -49,14 +53,33 @@ public class ToastHelper {
     };
 
     public void toast(String info) {
-        view.setText(info);
-        mFrameLayout.setVisibility(View.VISIBLE);
-        mHandler.removeMessages(0);
-        mHandler.sendEmptyMessageDelayed(0, mDelay);
+        if (mTextView != null) {
+            mTextView.setText(info);
+            mFrameLayout.setVisibility(View.VISIBLE);
+            mHandler.removeMessages(0);
+            mHandler.sendEmptyMessageDelayed(0, mDelay);
+        }
+    }
+
+    public void toast(int resId) {
+        if (mTextView != null) {
+            toast(mTextView.getResources().getString(resId));
+        }
+    }
+
+    public void toast(String info, long delay) {
+        if (mTextView != null) {
+            mTextView.setText(info);
+            mFrameLayout.setVisibility(View.VISIBLE);
+            mHandler.removeMessages(0);
+            mHandler.sendEmptyMessageDelayed(0, delay);
+        }
     }
 
     public void cancel() {
         mHandler.removeMessages(0);
-        mFrameLayout.setVisibility(View.GONE);
+        if (mFrameLayout != null) {
+            mFrameLayout.setVisibility(View.GONE);
+        }
     }
 }

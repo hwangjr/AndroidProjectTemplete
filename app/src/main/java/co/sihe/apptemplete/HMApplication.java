@@ -13,7 +13,7 @@ public class HMApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        if(BuildConfig.DEBUG_CANARY) {
+        if(BuildConfig.DEBUG) {
             refWatcher = LeakCanary.install(this);
         } else {
             refWatcher = RefWatcher.DISABLED;

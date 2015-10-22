@@ -2,8 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/wheat"
     android:orientation="vertical"
     tools:context=".MainActivityFragment">
+
+    <FrameLayout
+        android:id="@+id/appbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <co.sihe.apptemplete.views.tab.FragmentPagerTabGroup
         android:id="@+id/tabgroup_main"

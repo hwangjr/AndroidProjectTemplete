@@ -11,7 +11,9 @@
         android:layout_weight="1"
         android:background="@drawable/tab_bg_selector"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/padding_small"
+        android:paddingTop="@dimen/padding_small">
 
         <FrameLayout
             android:layout_width="wrap_content"

@@ -22,7 +22,7 @@ public class MainActivityFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         View contentView = inflater.inflate(R.layout.fragment_main, container,
                 false);
-        initTitleBar(contentView);
+        AppBarFragment.setupInMainFragment(this);
         initTabGroup(contentView);
         return contentView;
     }
@@ -38,8 +38,5 @@ public class MainActivityFragment extends BaseFragment {
         mFragmentPagerTabGroup.addTab(FocusFragment.class, args);
         mFragmentPagerTabGroup.addTab(FocusFragment.class, args);
         mFragmentPagerTabGroup.setCurrentTab(0);
-    }
-
-    private void initTitleBar(View rootView) {
     }
 }
